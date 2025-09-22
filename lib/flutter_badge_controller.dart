@@ -1,4 +1,4 @@
-/// Flutter Icon Badge
+/// Flutter Badge Controller
 ///
 /// This is the main entry point for the `flutter_badge_controller` plugin.
 /// It provides a simple API to set, get, and clear the app icon badge.

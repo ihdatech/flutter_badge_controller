@@ -1,4 +1,4 @@
-# Flutter Icon Badge
+# Flutter Badge Controller
 
 A simple Flutter plugin to manage **app icon badges** on **iOS** and **Android**.
 
