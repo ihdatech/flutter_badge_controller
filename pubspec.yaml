@@ -6,12 +6,9 @@ repository: https://github.com/ihdatech/flutter_badge_controller
 topics:
   - badge
   - app-badge
-  - icon-badge
   - flutter
   - android
   - ios
-  - notification
-  - flutter-plugin
 
 environment:
   sdk: ^3.8.1
