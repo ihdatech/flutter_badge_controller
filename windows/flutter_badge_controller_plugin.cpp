@@ -25,6 +25,9 @@ void FlutterBadgeControllerPlugin::RegisterWithRegistrar(
 
   auto plugin = std::make_unique<FlutterBadgeControllerPlugin>();
 
+  plugin->main_window_handle_ = ::GetAncestor(
+      registrar->GetView()->GetNativeWindow(), GA_ROOT);
+
   channel->SetMethodCallHandler(
       [plugin_pointer = plugin.get()](const auto &call, auto result) {
         plugin_pointer->HandleMethodCall(call, std::move(result));
