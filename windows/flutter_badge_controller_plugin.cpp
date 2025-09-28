@@ -51,6 +51,11 @@ void FlutterBadgeControllerPlugin::HandleMethodCall(
       version_stream << "7";
     }
     result->Success(flutter::EncodableValue(version_stream.str()));
+  } else if (method_call.method_name().compare("clearBadge") == 0) {
+    if (taskbar_list_ && main_window_handle_) {
+      taskbar_list_->SetProgressState(main_window_handle_, TBPF_NOPROGRESS);
+    }
+    result->Success();
   } else {
     result->NotImplemented();
   }
