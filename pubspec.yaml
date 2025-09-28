@@ -32,3 +32,5 @@ flutter:
         pluginClass: FlutterBadgeControllerPlugin
       ios:
         pluginClass: FlutterBadgeControllerPlugin
+      windows:
+        pluginClass: FlutterBadgeControllerPlugin
