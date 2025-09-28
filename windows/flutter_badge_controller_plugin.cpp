@@ -51,7 +51,20 @@ void FlutterBadgeControllerPlugin::HandleMethodCall(
       version_stream << "7";
     }
     result->Success(flutter::EncodableValue(version_stream.str()));
-  } else if (method_call.method_name().compare("clearBadge") == 0) {
+  } else if (method_call.method_name().compare("setBadge") == 0) {
+    int count = std::get<int>(*method_call.arguments());
+
+    if (taskbar_list_ && main_window_handle_) {
+      if (count > 0) {
+        // Simulasi badge: tampilkan progress indeterminate
+        taskbar_list_->SetProgressState(main_window_handle_, TBPF_INDETERMINATE);
+      } else {
+        // Hapus badge
+        taskbar_list_->SetProgressState(main_window_handle_, TBPF_NOPROGRESS);
+      }
+    }
+    result->Success();
+  }else if (method_call.method_name().compare("clearBadge") == 0) {
     if (taskbar_list_ && main_window_handle_) {
       taskbar_list_->SetProgressState(main_window_handle_, TBPF_NOPROGRESS);
     }
