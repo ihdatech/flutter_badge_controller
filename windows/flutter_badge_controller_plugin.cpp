@@ -33,7 +33,15 @@ void FlutterBadgeControllerPlugin::RegisterWithRegistrar(
   registrar->AddPlugin(std::move(plugin));
 }
 
-FlutterBadgeControllerPlugin::FlutterBadgeControllerPlugin() {}
+FlutterBadgeControllerPlugin::FlutterBadgeControllerPlugin() {
+  CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
+
+  CoCreateInstance(CLSID_TaskbarList, nullptr, CLSCTX_ALL,
+                   IID_PPV_ARGS(&taskbar_list_));
+  if (taskbar_list_) {
+    taskbar_list_->HrInit();
+  }
+}
 
 FlutterBadgeControllerPlugin::~FlutterBadgeControllerPlugin() {
   CoUninitialize();
