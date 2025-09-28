@@ -35,7 +35,9 @@ void FlutterBadgeControllerPlugin::RegisterWithRegistrar(
 
 FlutterBadgeControllerPlugin::FlutterBadgeControllerPlugin() {}
 
-FlutterBadgeControllerPlugin::~FlutterBadgeControllerPlugin() {}
+FlutterBadgeControllerPlugin::~FlutterBadgeControllerPlugin() {
+  CoUninitialize();
+}
 
 void FlutterBadgeControllerPlugin::HandleMethodCall(
     const flutter::MethodCall<flutter::EncodableValue> &method_call,
