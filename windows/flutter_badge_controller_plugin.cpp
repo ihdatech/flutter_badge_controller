@@ -2,6 +2,8 @@
 
 // This must be included before many other Windows headers.
 #include <windows.h>
+#include <shobjidl.h> 
+#include <wrl/client.h>
 
 // For getPlatformVersion; remove unless needed for your plugin implementation.
 #include <VersionHelpers.h>
